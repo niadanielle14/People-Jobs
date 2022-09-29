@@ -1,5 +1,5 @@
-# <p style="text-align:center"> People and Jobs </p>
-# <p style="text-align:center"> Backend Project using Java and Spring Boot </p>
+# <p style="text-align: center;">People and Jobs</p>
+# <p style="text-align: center;">Backend Project using Java and Spring Boot</p>
 
 ### Requirements:
 #### :star:    1. MySQL Seeded Database with Person and Job Tables
