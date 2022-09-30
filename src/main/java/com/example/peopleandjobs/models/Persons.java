@@ -18,7 +18,8 @@ public class Persons {
     @Column(nullable = false, columnDefinition = "date")
     private int dateUpdated;
 
-    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated) {
+
+    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated, Jobs jobTitle) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
