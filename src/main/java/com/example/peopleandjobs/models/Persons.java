@@ -13,19 +13,23 @@ public class Persons {
     private String lastName;
     @Column(nullable = false)
     private int age;
+
+    @Column(nullable = false)
+    private String jobTitle;
     @Column(nullable = false, columnDefinition = "date")
     private int dateJoined;
     @Column(nullable = false, columnDefinition = "date")
     private int dateUpdated;
 
 
-    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated, Jobs jobTitle) {
+    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated, String jobTitle) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
         this.dateJoined = dateJoined;
         this.dateUpdated = dateUpdated;
+        this.jobTitle = jobTitle;
     }
 
     public Persons() {
@@ -79,4 +83,13 @@ public class Persons {
     public void setDateUpdated(int dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
+    }
+
 }
+

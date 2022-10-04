@@ -8,8 +8,9 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+
     @OneToOne
-    @JoinColumn(name = "jobTitle", nullable = false)
+    @JoinColumn(name = "job_title")
     private Persons jobTitle;
     @Column(nullable = false)
     private double salary;
