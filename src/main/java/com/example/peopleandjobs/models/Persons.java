@@ -7,6 +7,9 @@ public class Persons {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column
+    private String img;
     @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
@@ -22,7 +25,7 @@ public class Persons {
     private int dateUpdated;
 
 
-    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated, String jobTitle) {
+    public Persons(long id, String firstName, String lastName, int age, int dateJoined, int dateUpdated, String jobTitle, String img) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,6 +33,7 @@ public class Persons {
         this.dateJoined = dateJoined;
         this.dateUpdated = dateUpdated;
         this.jobTitle = jobTitle;
+        this.img = img;
     }
 
     public Persons() {
@@ -89,6 +93,14 @@ public class Persons {
 
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
 }
