@@ -20,6 +20,7 @@ public class Persons {
 
     @Column(nullable = false)
     private String jobTitle;
+
     @Column(nullable = false, columnDefinition = "date")
     private Date dateJoined;
     @Column(nullable = false, columnDefinition = "date")
@@ -33,7 +34,7 @@ public class Persons {
         this.age = age;
         this.dateJoined = dateJoined;
         this.dateUpdated = dateUpdated;
-        this.jobTitle = jobTitle;
+        this.jobTitle =  jobTitle;
         this.img = img;
     }
 

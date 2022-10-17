@@ -8,16 +8,15 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-
     @OneToOne
-    @JoinColumn(name = "job_title")
+    @JoinColumn(name = "job_title", referencedColumnName="jobTitle")
     private Persons jobTitle;
     @Column(nullable = false)
     private double salary;
 
-    public Jobs(long id, Persons jobTitle, double salary) {
+    public Jobs(long id, Persons jobsTitle, double salary) {
         this.id = id;
-        this.jobTitle = jobTitle;
+        this.jobTitle = jobsTitle;
         this.salary = salary;
     }
 
