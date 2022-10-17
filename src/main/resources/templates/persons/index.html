@@ -10,8 +10,8 @@
     <h5>View a List of People Below</h5>
 </div>
 <div>
-    <ul>
-        <li th:text="${persons}">
+    <ul th:each="persons : ${persons}">
+        <li th:text="${persons.firstName}">
         </li>
     </ul>
 </div>
