@@ -105,5 +105,18 @@ public class Persons {
         this.img = img;
     }
 
+    @Override
+    public String toString() {
+        return "Persons{" +
+                "id=" + id +
+                ", img='" + img + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", dateJoined=" + dateJoined +
+                ", dateUpdated=" + dateUpdated +
+                '}';
+    }
 }
 

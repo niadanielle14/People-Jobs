@@ -9,6 +9,8 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.List;
+
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 @Rollback(value = false)
@@ -16,7 +18,7 @@ public class PersonsRepositoryTest {
     @Autowired private PersonsRepo repo;
 
     @Test //TESTING ADD NEW PERSON
-    public void testAddNew() {
+    public void testAddNewPersons() {
         Persons persons = new Persons();
         persons.setAge(73);
         persons.setFirstName("Nia");
@@ -28,6 +30,16 @@ public class PersonsRepositoryTest {
 
         Assertions.assertThat(savedPersons).isNotNull();
         Assertions.assertThat(savedPersons.getId()).isGreaterThan(0);
+    }
+
+    @Test
+    public void testFindAllPersons() {
+        List<Persons> person = repo.findAll();
+        Assertions.assertThat(person).hasSizeGreaterThan(0);
+
+        for (Persons persons : person) {
+            System.out.println(person);
+        }
     }
 
 }
