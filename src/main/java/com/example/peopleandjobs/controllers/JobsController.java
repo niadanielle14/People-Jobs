@@ -21,7 +21,7 @@ public class JobsController {
 
     @GetMapping("/index-jobs")
     public String index(Model model) {
-        model.addAttribute("jobs", jobsDao.findAll());
+//        model.addAttribute("jobs", jobsDao.findAll());
         return "jobs/index-jobs";
     }
 }

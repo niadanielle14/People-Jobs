@@ -1,7 +1,7 @@
 package com.example.peopleandjobs.repositories;
 
 import com.example.peopleandjobs.models.Jobs;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface JobsRepo extends JpaRepository<Jobs, Long> {
+public interface JobsRepo extends CrudRepository<Jobs, Long> {
 }
