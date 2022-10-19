@@ -21,11 +21,10 @@ public class Persons {
     @Column(nullable = false)
     private String jobTitle;
 
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(columnDefinition = "date")
     private Date dateJoined;
-    @Column(nullable = false, columnDefinition = "date")
+    @Column(columnDefinition = "date")
     private Date dateUpdated;
-
 
     public Persons(long id, String firstName, String lastName, int age, Date dateJoined, Date dateUpdated, String jobTitle, String img) {
         this.id = id;
@@ -41,6 +40,7 @@ public class Persons {
     public Persons() {
 
     }
+
 
     public long getId() {
         return id;
