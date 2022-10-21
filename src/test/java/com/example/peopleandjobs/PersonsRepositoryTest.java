@@ -18,7 +18,7 @@ public class PersonsRepositoryTest {
     @Autowired private PersonsRepo repo;
 
     @Test //TESTING ADD NEW PERSON
-    public void testAddNewPersons() {
+    public void testAddNewPerson() {
         Persons persons = new Persons();
         persons.setAge(73);
         persons.setFirstName("Nia");
@@ -33,13 +33,24 @@ public class PersonsRepositoryTest {
     }
 
     @Test
-    public void testFindAllPersons() {
-        List<Persons> person = repo.findAll();
-        Assertions.assertThat(person).hasSizeGreaterThan(0);
+    public void testFindAllPerson() {
+        List<Persons> people = repo.findAll();
+        Assertions.assertThat(people).hasSizeGreaterThan(0);
 
-        for (Persons persons : person) {
-            System.out.println(person);
+        for (Persons persons : people) {
+            System.out.println(people);
         }
     }
+
+    @Test
+    public long testUpdatePerson() {
+        Persons person = repo.getReferenceById(testUpdatePerson());
+        int personId = 1;
+        repo.getReferenceById((long) personId);
+
+        return 0;
+    }
+
+
 
 }
