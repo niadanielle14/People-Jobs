@@ -17,16 +17,15 @@ public class Persons {
     private String lastName;
     @Column(nullable = false)
     private int age;
-
-    @Column(nullable = false)
-    private String jobTitle;
-
+    @OneToOne
+    @JoinColumn(name = "job_title", referencedColumnName="jobTitle")
+    private Jobs jobTitle;
     @Column(columnDefinition = "date")
     private Date dateJoined;
     @Column(columnDefinition = "date")
     private Date dateUpdated;
 
-    public Persons(long id, String firstName, String lastName, int age, Date dateJoined, Date dateUpdated, String jobTitle, String img) {
+    public Persons(long id, String firstName, String lastName, int age, Date dateJoined, Date dateUpdated, Jobs jobTitle, String img) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -89,11 +88,11 @@ public class Persons {
     public void setDateUpdated(Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
-    public String getJobTitle() {
+    public Jobs getJobTitle() {
         return jobTitle;
     }
 
-    public void setJobTitle(String jobTitle) {
+    public void setJobTitle(Jobs jobTitle) {
         this.jobTitle = jobTitle;
     }
 
@@ -118,5 +117,7 @@ public class Persons {
                 ", dateUpdated=" + dateUpdated +
                 '}';
     }
+
+
 }
 

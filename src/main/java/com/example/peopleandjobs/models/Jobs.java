@@ -8,13 +8,12 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
-    @JoinColumn(name = "job_title", referencedColumnName="jobTitle")
-    private Persons jobTitle;
+    @Column(nullable = false)
+    private String jobTitle;
     @Column(nullable = false)
     private double salary;
 
-    public Jobs(long id, Persons jobsTitle, double salary) {
+    public Jobs(long id, String jobsTitle, double salary) {
         this.id = id;
         this.jobTitle = jobsTitle;
         this.salary = salary;
@@ -38,11 +37,11 @@ public class Jobs {
         this.salary = salary;
     }
 
-    public Persons getJobTitle() {
+    public String getJobTitle() {
         return jobTitle;
     }
 
-    public void setJobTitle(Persons jobTitle) {
+    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
 

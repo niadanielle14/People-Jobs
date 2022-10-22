@@ -44,7 +44,7 @@ public class PersonsRepositoryTest {
 
     @Test
     public long testUpdatePerson() {
-        Persons person = repo.getReferenceById(testUpdatePerson());
+        Persons person = repo.getReferenceById();
         int personId = 1;
         repo.getReferenceById((long) personId);
 
