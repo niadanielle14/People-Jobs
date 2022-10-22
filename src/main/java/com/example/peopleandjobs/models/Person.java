@@ -4,7 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Persons {
+@Table(name = "Persons")
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -18,14 +19,14 @@ public class Persons {
     @Column(nullable = false)
     private int age;
     @OneToOne
-    @JoinColumn(name = "job_title", referencedColumnName="jobTitle")
-    private Jobs jobTitle;
+    @JoinColumn(name = "job_id", referencedColumnName="jobTitle")
+    private Job jobTitle;
     @Column(columnDefinition = "date")
     private Date dateJoined;
     @Column(columnDefinition = "date")
     private Date dateUpdated;
 
-    public Persons(long id, String firstName, String lastName, int age, Date dateJoined, Date dateUpdated, Jobs jobTitle, String img) {
+    public Person(long id, String firstName, String lastName, int age, Date dateJoined, Date dateUpdated, Job jobTitle, String img) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +37,7 @@ public class Persons {
         this.img = img;
     }
 
-    public Persons() {
+    public Person() {
 
     }
 
@@ -88,11 +89,11 @@ public class Persons {
     public void setDateUpdated(Date dateUpdated) {
         this.dateUpdated = dateUpdated;
     }
-    public Jobs getJobTitle() {
+    public Job getJobTitle() {
         return jobTitle;
     }
 
-    public void setJobTitle(Jobs jobTitle) {
+    public void setJobTitle(Job jobTitle) {
         this.jobTitle = jobTitle;
     }
 

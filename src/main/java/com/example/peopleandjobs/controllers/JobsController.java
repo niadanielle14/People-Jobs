@@ -1,7 +1,7 @@
 package com.example.peopleandjobs.controllers;
 
-import com.example.peopleandjobs.repositories.JobsRepo;
-import com.example.peopleandjobs.repositories.PersonsRepo;
+import com.example.peopleandjobs.repositories.JobRepo;
+import com.example.peopleandjobs.repositories.PersonRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class JobsController {
 
-    private final JobsRepo jobsDao;
-    private final PersonsRepo personsDao;
+    private final JobRepo jobsDao;
+    private final PersonRepo personsDao;
 
 
-    public JobsController(JobsRepo jobsDao, PersonsRepo personsDao) {
+    public JobsController(JobRepo jobsDao, PersonRepo personsDao) {
         this.jobsDao = jobsDao;
         this.personsDao = personsDao;
     }

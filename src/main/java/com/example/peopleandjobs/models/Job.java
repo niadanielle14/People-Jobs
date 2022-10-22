@@ -3,7 +3,8 @@ package com.example.peopleandjobs.models;
 import javax.persistence.*;
 
 @Entity
-public class Jobs {
+@Table(name = "Jobs")
+public class Job {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -13,13 +14,13 @@ public class Jobs {
     @Column(nullable = false)
     private double salary;
 
-    public Jobs(long id, String jobsTitle, double salary) {
+    public Job(long id, String jobsTitle, double salary) {
         this.id = id;
         this.jobTitle = jobsTitle;
         this.salary = salary;
     }
 
-    public Jobs() {
+    public Job() {
     }
     public long getId() {
         return id;
